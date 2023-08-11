@@ -13,9 +13,9 @@ images = []
 #this list will contain all the names from dataset
 classNames = []
 # used to get the list of all files and directories in the specified directory
-#basically ye saari images mylist naam ke variable mei daal raha hai
+#adding all the images to the variable "myList"
 myList = os.listdir(path)
-#phir hum woh saari images ka naam print kr rhe hai
+#printing names of all the images
 #also we are printing the extension
 print(myList)
 #basically we are applying for loop to split the full name of the images into root and extension
@@ -40,7 +40,7 @@ def findEncodings(imgs):
   for img in imgs:
     # the predefined colour scheme in python is bgr...we are converting it to rgb
     img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
-    #saari jo orientations hain unko theek krne ke liye
+    #improving the orientation
     encode = face_recognition.face_encodings(img)[0]
     #appending the encoded images to a list called encode list
     encodeList.append(encode)
